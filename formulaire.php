@@ -3,7 +3,7 @@
     <title>Formulaire en PHP/MySQL</title>
   </head>
   <body>
-  <form action="traitementform.php" method="get">
+  <form action="traitementform.php" method="post">
     <div>
         <label for="name">Nom :</label>
         <input type="text" id="name" name="user_name">
@@ -14,7 +14,7 @@
     </div>
 
     <div>
-        <label for="mail">e-mail :</label>
+        <label for="mail">e-mail:</label>
         <input type="email" id="mail" name="user_mail">
     </div>
 
