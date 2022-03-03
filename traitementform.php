@@ -20,14 +20,36 @@ foreach($_GET as $value)  {
     $name = $_POST["user_name"]; 
     $email = $_POST["user_mail"];
     
-    if (isset($name)){
+    if (!isset($name)){
         die("S'il vous plaît entrez votre nom");
     }
     if (!isset($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
         die("S'il vous plaît entrez votre adresse e-mail");
     }
     
-    print "Salut " . $name . "!, votre adresse e-mail est ". $email;
+    if (isset($_POST['pwd']))
+{
+    //comparing the user input with the good password
+    if ($_POST['pwd'] == 'Nandrianina')
+    {
+        echo 'Password is good';
+    }
+    else
+    {
+        die("entrez le bon mot de passe");
+    }
+}
+
+
+
+    /*print "Salut " . $name . "!, votre adresse e-mail est ". $email;*/
+
+    foreach($_POST as $value)  {
+    
+        echo $value."<br/>" ;
+    }
+
+
 }
 
  ?>

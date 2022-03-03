@@ -18,6 +18,13 @@
         <input type="email" id="mail" name="user_mail">
     </div>
 
+    <div>
+        <label for="pwd">Mot de passe</label>
+        <input type="password" name="pwd" placeholder="Password" required />
+
+    </div>
+
+
     <div class="button">
         <button type="submit">Envoyer</button>
     </div>
