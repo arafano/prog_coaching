@@ -3,7 +3,7 @@
     <title>Formulaire en PHP/MySQL</title>
   </head>
   <body>
-  <form action="traitementform.php" method="post">
+  <form action="traitement.php" method="post">
     <div>
         <label for="name">Nom :</label>
         <input type="text" id="name" name="user_name">
@@ -24,11 +24,14 @@
 
     </div>
 
+    
     <?php
+    /*
     if($_GET['msg'] == 1) {
             echo "erreur 1 car blabla";
             }
-   ?>
+   */
+            ?>
    
     <div class="button">
         <button type="submit">Envoyer</button>

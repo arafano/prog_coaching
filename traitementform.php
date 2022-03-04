@@ -31,12 +31,28 @@ foreach($_GET as $value)  {
 {
     //comparing the user input with the good password
     if ($_POST['pwd'] == 'Nandrianina')
+    
     {
-        echo 'Password is good';
+
+        foreach($_POST as $value)  {
+    
+            echo $value."<br/>" ;
+        }
+    
+
+
+        echo 'Password is good <br/>';
     }
     else
     {
-        die("entrez le bon mot de passe");
+        /*echo "dfdsjfkdsjfklsd";*/
+        $message="password do not match";
+        header('Location: http://localhost/prog_coaching/formulaire.php?msg=1');
+        
+        /*
+        exit();
+        echo "entrez le bon mot de passe";
+    */
     }
 }
 
@@ -44,11 +60,7 @@ foreach($_GET as $value)  {
 
     /*print "Salut " . $name . "!, votre adresse e-mail est ". $email;*/
 
-    foreach($_POST as $value)  {
-    
-        echo $value."<br/>" ;
-    }
-
+  
 
 }
 
