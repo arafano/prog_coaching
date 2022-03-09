@@ -8,6 +8,25 @@
 <?php
 
 
+if (!isset($_GET['age']) ){
+
+
+    $_GET['age']="0-100";
+   
+
+    
+}
+
+
+if (!isset($_GET['sexe']) ){
+
+
+    $_GET['sexe']="Les deux";
+   
+
+    
+}
+
  if (isset($_POST) || isset($_GET))  {
     //$name = $_POST["user_name"]; 
     //$email = $_POST["user_mail"];
@@ -35,11 +54,11 @@
 
         $tabpersonnes = array (
 
-            "0"  => array("nom" => "Nom", "prenom" => "Prenom", "sexe" => "Sexe","age" => "Age"),
-            "1"  => array("nom" => "Le Couriaud", "prenom" => "Mathieu", "sexe" => "M","age" => "2"),
-            "2"  => array("nom" => "Le Duc", "prenom" => "Philippe", "sexe" => "M","age" => "5"),
-            "3"  => array("nom" => "Le Tallec", "prenom" => "Sylvestre", "sexe" => "M","age" => "20"),
-            "4"  => array("nom" => "Rasoa", "prenom" => "Clara", "sexe" => "F","age" => "30"),
+            "0"  => array("nom" => "Nom", "prenom" => "Prenom", "sexe" => "Sexe","age" => "Age","profil"=>"Profil"),
+            "1"  => array("nom" => "Le Couriaud", "prenom" => "Mathieu", "sexe" => "M","age" => "2","profil"=>"voir profil"),
+            "2"  => array("nom" => "Le Duc", "prenom" => "Philippe", "sexe" => "M","age" => "5","profil"=>"voir profil"),
+            "3"  => array("nom" => "Le Tallec", "prenom" => "Sylvestre", "sexe" => "M","age" => "20","profil"=>"voir profil"),
+            "4"  => array("nom" => "Rasoa", "prenom" => "Clara", "sexe" => "F","age" => "30","profil"=>"voir profil"),
         
         );
         
@@ -48,6 +67,27 @@
         //var_dump($tabpersonnes);
 
         echo '<table>';
+        
+      
+        echo
+                            '<tr>
+                            <td>'. 
+                            $tabpersonnes[0]['nom']
+                            .'</td>
+                            <td>'.
+                            $tabpersonnes[0]['prenom']."  "
+                            .'</td>
+                            <td>'.
+                            $tabpersonnes[0]['sexe']."  "
+                            .'</td>
+                            <td>'.
+                            $tabpersonnes[0]['age']."  "
+                            .'</td>
+                            <td>'.
+                            $tabpersonnes[0]['profil']."  "
+                            .'</td>
+                            <tr/>';
+        
         foreach($tabpersonnes as $tabpersonne)  {
     
    
@@ -85,6 +125,9 @@
                             .'</td>
                             <td>'.
                             $tabpersonne['age']."  "
+                            .'</td>
+                            <td>'.
+                            $tabpersonne['profil']."  "
                             .'</td>
                             <tr/>';
 
