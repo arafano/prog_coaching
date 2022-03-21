@@ -1,11 +1,6 @@
-<html>
-<head>
-  <title>...</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 <?php
+
+include 'header.php';
 
 
 if (!isset($_GET['age']) ){
@@ -51,6 +46,7 @@ if (!isset($_GET['sexe']) ){
     
     {
 
+        /*
 
         $tabpersonnes = array (
 
@@ -61,6 +57,8 @@ if (!isset($_GET['sexe']) ){
             "4"  => array("nom" => "Rasoa", "prenom" => "Clara", "sexe" => "F","age" => "30","profil"=>"voir profil"),
         
         );
+        */
+        include 'variable.php';
         
         include 'filtre.php';
 
@@ -69,28 +67,44 @@ if (!isset($_GET['sexe']) ){
         echo '<table>';
         
       
-        echo
-                            '<tr>
-                            <td>'. 
-                            $tabpersonnes[0]['nom']
-                            .'</td>
-                            <td>'.
-                            $tabpersonnes[0]['prenom']."  "
-                            .'</td>
-                            <td>'.
-                            $tabpersonnes[0]['sexe']."  "
-                            .'</td>
-                            <td>'.
-                            $tabpersonnes[0]['age']."  "
-                            .'</td>
-                            <td>'.
-                            $tabpersonnes[0]['profil']."  "
-                            .'</td>
-                            <tr/>';
         
+
+        $i=0;
         foreach($tabpersonnes as $tabpersonne)  {
     
-   
+
+
+
+        if($i==0) {
+            
+        echo
+                        '<tr>
+                        <td>'. 
+                        $tabpersonnes[0]['nom']
+                        .'</td>
+                        <td>'.
+                        $tabpersonnes[0]['prenom']."  "
+                        .'</td>
+                        <td>'.
+                        $tabpersonnes[0]['sexe']."  "
+                        .'</td>
+                        <td>'.
+                        $tabpersonnes[0]['age']."  "
+                        .'</td>
+                        <td>'
+                        
+                        
+                        .$tabpersonnes[0]['profil']."  "
+                        
+                        ///<a href="your link">.$tabpersonnes[0]['profil']."  "</a>
+                        
+                        
+                        .'</td>
+                        <tr/>';
+        //$i++;
+                    }
+        
+    else{
             //var_dump($_GET);
             //echo $tabpersonne['sexe'];
             if(  $_GET['sexe'] == "Les deux" ||
@@ -113,7 +127,7 @@ if (!isset($_GET['sexe']) ){
                             $_GET['age'] == $tabpersonne['sexe']) 
                         */
                             echo
-                            '<tr class="tableau">
+                            '<tr>
                             <td>'. 
                             $tabpersonne['nom']."  "
                             .'</td>
@@ -127,7 +141,13 @@ if (!isset($_GET['sexe']) ){
                             $tabpersonne['age']."  "
                             .'</td>
                             <td>'.
-                            $tabpersonne['profil']."  "
+                            
+                            ///.$tabpersonne['profil']."  "
+
+
+
+                            '<a href="profilpersonne.php?id='.$i.'">'.$tabpersonnes[0]['profil'].'</a>'
+
                             .'</td>
                             <tr/>';
 
@@ -135,8 +155,11 @@ if (!isset($_GET['sexe']) ){
             }
 
         }
+        $i++;
+    }
 
         echo '</table>';
+    
 
   
         if(isset($_POST['submit'])){

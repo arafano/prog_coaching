@@ -1,12 +1,11 @@
-<html>
-  <head>
-    <title>Formulaire en PHP/MySQL</title>
-  </head>
-  <body>
   <form action="traitement.php" method="GET">
     <div>
 
-    <label for="age">Age : </label>
+    <?php
+
+
+    ?>
+    <label for="age" class="style">Age : </label>
         <select name="age">
           <!-- <option><Select></option> -->
           <option value="0-18" <?php if($_GET["age"]=='0-18') {echo "selected";}?>>0-18</option>
@@ -27,41 +26,6 @@
         
         <?php
 
-        /*
-        var_dump($_GET["sexe"]);
-        if( $_GET["sexe"] == "M") {
-            
-            echo '<input type="radio" name="sexe" value="M" checked>M';
-
-        }else{
-
-          echo '<input type="radio" name="sexe" value="M">M';}
-
-
-        var_dump($_GET["sexe"]);
-
-        if( $_GET["sexe"] == "F") {
-      
-            echo '<input type="radio" name="sexe" value="F" checked>F';
-
-          }else{
-
-            echo '<input type="radio" name="sexe" value="F">F';}
-
-      
-        if( $_GET['sexe'] == "Les deux" ) {
-            
-            echo '<input type="radio" name="sexe" value="Les deux" checked>Les deux';
-        }
-        
-        else{
-
-          echo '<input type="radio" name="sexe" value="Les deux">Les deux';}
-
-        
-        var_dump($_GET["sexe"]);
-
-        */
         ?>
         
         <input type="radio" name="sexe" value="M" <?php if($_GET["sexe"]=='M') {echo "checked";}?>/>M
@@ -76,5 +40,4 @@
     </div>
 
 </form>
-  </body>
-</html>
+  

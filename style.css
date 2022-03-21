@@ -1,8 +1,24 @@
 td{
 
-
 width: 100px;
-
-
+color: red;
 
 }
+
+tr{
+
+
+    color: red;
+    
+    }
+
+table{
+
+
+        color: red;
+        
+}
+
+body {
+    color: blue;
+  }
