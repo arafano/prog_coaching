@@ -39,6 +39,16 @@ try {
                 }
                 echo '</table>';
 
+    /*
+    $nom='Petit';
+    $prenom='beurre';
+    $age=36;
+    $sexe='M';
+    */
+    $image='http://localhost/prog_coaching/img/2.jpg';
+    $donnees=add_person($nom,$prenom,$age,$sexe,$image);
+
+
 } catch (PDOException $e) {
     print "Erreur !: " . $e->getMessage() . "<br/>";
     die();

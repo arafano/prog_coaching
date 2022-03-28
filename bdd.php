@@ -57,6 +57,8 @@
             
                 //var_dump($donnees->fetchAll());
                 //$tabs=$donnees->fetchAll();
+
+                return $donnees;
                 
             
             } catch (PDOException $e) {
